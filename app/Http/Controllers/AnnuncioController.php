@@ -13,8 +13,20 @@ class AnnuncioController extends Controller
 
     public function store(\Illuminate\Http\Request $r)
     {
-        \App\Models\Annuncio::create($r->all());
+        $dati = $r->validate([
+            'titolo' => 'required',
+            'marca' => 'required',
+            'modello' => 'required',
+            'prezzo_giorno' => 'required|numeric',
+            'citta' => 'required',
+            'contatto' => 'required',
+            'posti' => 'required|integer|min:1|max:9',
 
-        return redirect('/annunci');
+        ]);
+
+        \App\Models\Annuncio::create($dati);
+
+        return redirect('/annunci')->with('ok', 'Annuncio pubblicato!');
+
     }
 }
