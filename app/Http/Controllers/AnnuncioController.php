@@ -18,10 +18,9 @@ class AnnuncioController extends Controller
             'marca' => 'required',
             'modello' => 'required',
             'prezzo_giorno' => 'required|numeric',
+            'posti' => 'required|integer|min:1|max:9',
             'citta' => 'required',
             'contatto' => 'required',
-            'posti' => 'required|integer|min:1|max:9',
-
         ]);
 
         \App\Models\Annuncio::create($dati);

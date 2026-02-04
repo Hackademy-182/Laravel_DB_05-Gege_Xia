@@ -20,13 +20,15 @@
                         @error('titolo')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
+                        <input name="titolo" class="form-control mb-2" placeholder="Titolo annuncio">
+                        <input name="marca" class="form-control mb-2" placeholder="Marca">
+                        <input name="modello" class="form-control mb-2" placeholder="Modello">
+                        <input name="prezzo_giorno" class="form-control mb-2" placeholder="Prezzo al giorno €">
+                        <input name="posti" class="form-control mb-2" placeholder="Posti (es. 4)">
 
-                        <input class="form-control mb-2" name="marca" placeholder="Marca auto">
-                        <input class="form-control mb-2" name="modello" placeholder="Modello">
-                        <input class="form-control mb-2" name="prezzo_giorno" placeholder="Prezzo al giorno €">
-                        <input class="form-control mb-2" name="citta" placeholder="Città">
-                        <input class="form-control mb-2" name="contatto" placeholder="Telefono o email">
-                        <input class="form-control mb-2" name="posti" placeholder="Posti (es. 4)">
+                        <input name="citta" class="form-control mb-2" placeholder="Città">
+                        <input name="contatto" class="form-control mb-2" placeholder="Telefono o email">
+
                         @error('posti')
                             <div class="text-danger small">{{ $message }}</div>
                         @enderror
